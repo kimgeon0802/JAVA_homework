@@ -1,18 +1,21 @@
-HELP.md
+### Maven ###
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-logs/
-.settings/
-bin/
+!/.mvn/wrapper/maven-wrapper.jar
 
-### STS ###
-.apt_generated
+### Eclipse / STS ###
+bin/
+.apt_generated/
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
-.sts4-cache
- to join this conversa
+.sts4-cache/
+
+### Logs ###
+logs/
+*.log
+
+### OS ###
+.DS_Store
+Thumbs.db
