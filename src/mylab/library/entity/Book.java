@@ -1,33 +1,21 @@
 package mylab.library.entity;
 
 public class Book {
-	private String title;//제목
-	private String author;//저자
-	private String isbn; //도서번호
-	private String publishYear;//출판년도
-	private boolean isAvailable;//대출상태
-	
-    public Book(String title, String author, String isbn) {
+
+    private String title;
+    private String author;
+    private String isbn;
+    private int publishYear;
+    private boolean available;
+
+    public Book(String title, String author, String isbn, int publishYear) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
-        this.isAvailable = true;   // 기본은 대출 가능
-    }
-    
-    public boolean isAvailable() {
-        return isAvailable;
+        this.publishYear = publishYear;
+        this.available = true;
     }
 
-    public void checkOut() {
-        if (isAvailable) {
-        	isAvailable = false;
-        }
-    }
-
-    public void returnBook() {
-    	isAvailable = true;
-    }
-    
     public String getTitle() {
         return title;
     }
@@ -39,8 +27,29 @@ public class Book {
     public String getIsbn() {
         return isbn;
     }
-    
-    public String publishYear() {
+
+    public int getPublishYear() {
         return publishYear;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void checkOut() {
+        available = false;
+    }
+
+    public void returnBook() {
+        available = true;
+    }
+
+    @Override
+    public String toString() {
+        return "책 제목: " + title +
+                "\t저자: " + author +
+                "\tISBN: " + isbn +
+                "\t출판년도: " + publishYear +
+                "\t대출 가능 여부: " + (available ? "가능" : "대출 중");
     }
 }

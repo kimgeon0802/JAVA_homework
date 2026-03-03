@@ -102,4 +102,8 @@ public class Library {
         }
         return count;
     }
+    
+    public int getBorrowedBookCount() {
+        return getTotalBooks() - getAvailableBookCount();
+    }
 }
